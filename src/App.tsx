@@ -1,7 +1,7 @@
 import React from "react";
 import { WelcomePage } from "./pages/WelcomePage";
-import { I18nProvider } from "./utils/hooks/I18nProvider";
-import { ThemeProvider } from "./utils/hooks/ThemeProvider";
+import { I18nProvider } from "./utils/providers/I18nProvider";
+import { ThemeProvider } from "./utils/providers/ThemeProvider";
 
 function App() {
   return (
