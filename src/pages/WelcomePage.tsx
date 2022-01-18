@@ -5,20 +5,25 @@ import {
   DialogContent,
   DialogTitle,
   Grid,
+  Switch as MuiSwitch,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import "../assets/css/App.css";
 import logo from "../assets/img/logo.svg";
 import { Page } from "../components/Page";
-import { Switch } from "../components/Switch";
 import { Welcome } from "../components/Welcome";
+import { useChangeTheme, useCurrentTheme } from "../utils/hooks/ThemeProvider";
 
 export const WelcomePage = () => {
   const [open, setOpen] = useState(false);
+  const theme = useCurrentTheme();
+  const changeTheme = useChangeTheme();
+
   useEffect(() => {
     setOpen(true);
   }, []);
+
   return (
     <Page>
       <>
@@ -29,13 +34,10 @@ export const WelcomePage = () => {
             </header>
           </Grid>
           <Grid item xs={12}>
-            <Switch />
-          </Grid>
-          <Grid item xs={12}>
-            <Switch />
-          </Grid>
-          <Grid item xs={12}>
-            <Switch />
+            <Typography color={theme === "dark" ? "whitesmoke" : "black"}>
+              Dark theme
+            </Typography>
+            <MuiSwitch onChange={() => changeTheme()} defaultChecked />
           </Grid>
         </Grid>
         <Dialog open={open} onClose={() => setOpen(false)}>
