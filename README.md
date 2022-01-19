@@ -8,6 +8,30 @@ See: https://create-react-app.dev/docs/getting-started/
 
 # Deep dive for https://reactjs.org/
 
+## Error Boundaries
+
+TBD
+
+## Forwarding Refs
+
+See `Text` component
+
+## Fragments
+
+See any components
+
+## Components and Props
+
+See `WelcomePage`
+
+## Higher-Order Components
+
+See `WelcomePage`
+
+## Render Props
+
+See `WelcomePage` and `FormPage`
+
 ## HOOKS
 
 Basic Hooks
@@ -177,7 +201,7 @@ const MemoizedChild = React.memo(() => <div>bar</div>);
 
 > passing newly created React elements (so any JSX that isn't specifically persisted) as children will cause a re-render.
 
-[Why using the `children` prop makes `React.memo()` not work](https://gist.github.com/slikts/e224b924612d53c1b61f359cfb962c06)
+[Why using the children prop makes React.memo() not work](https://gist.github.com/slikts/e224b924612d53c1b61f359cfb962c06)
 
 そのため、 `React.memo` でラップしたコンポーネントを `children` として渡してもメモ化は効かないことがわかった。
 
