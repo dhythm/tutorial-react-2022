@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { Appendix1 } from "./Appendix1";
 import { Pitfall1 } from "./Pitfall1";
 import { Pitfall2 } from "./Pitfall2";
 import { Pitfall3 } from "./Pitfall3";
@@ -34,6 +35,9 @@ export const Playground = () => {
       </Grid>
       <Grid item xs={12} direction={"row"}>
         <Quiz2 />
+      </Grid>
+      <Grid item xs={12} direction={"row"}>
+        <Appendix1 />
       </Grid>
     </Grid>
   );
