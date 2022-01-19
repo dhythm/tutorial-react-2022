@@ -6,6 +6,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import React, { useState } from "react";
+import { FormPage } from "./pages/FormPage";
 import { MemoPage } from "./pages/MemoPage";
 import { RefPage } from "./pages/RefPage";
 import { WelcomePage } from "./pages/WelcomePage";
@@ -27,6 +28,7 @@ function App() {
               row
             >
               <FormControlLabel value="main" control={<Radio />} label="Main" />
+              <FormControlLabel value="form" control={<Radio />} label="Form" />
               <FormControlLabel value="memo" control={<Radio />} label="Memo" />
               <FormControlLabel value="ref" control={<Radio />} label="Ref" />
             </RadioGroup>
@@ -34,6 +36,8 @@ function App() {
         </Box>
         {value === "main" ? (
           <WelcomePage />
+        ) : value === "form" ? (
+          <FormPage />
         ) : value === "memo" ? (
           <MemoPage />
         ) : (

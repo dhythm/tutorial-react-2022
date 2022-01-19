@@ -14,6 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import "../assets/css/App.css";
 import logo from "../assets/img/logo.svg";
+import { Counter } from "../components/Counter";
 import { withName } from "../components/hocs/withName";
 import { Page } from "../components/Page";
 import { Welcome } from "../components/Welcome";
@@ -76,6 +77,15 @@ export const WelcomePage = () => {
               <AddSharp />
             </IconButton>
           </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Counter
+            render={(count, handleClick) => (
+              <Button variant="contained" onClick={handleClick}>
+                {count}
+              </Button>
+            )}
+          />
         </Grid>
       </Grid>
       <Dialog open={open} onClose={() => setOpen(false)}>
