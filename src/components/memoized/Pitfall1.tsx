@@ -5,6 +5,7 @@ import { Component } from "./Component";
 export const Pitfall1 = () => {
   const [, setKey] = useState(0);
   const params = { foo: "bar" };
+  console.log(`A is rendered!`);
   return (
     <>
       <Button

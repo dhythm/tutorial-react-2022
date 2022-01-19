@@ -7,6 +7,7 @@ export const Pitfall2 = () => {
   const callback = () => {
     console.log("callback!!");
   };
+  console.log(`A is rendered!`);
   return (
     <>
       <Button

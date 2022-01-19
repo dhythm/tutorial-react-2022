@@ -1,9 +1,8 @@
 import { Button } from "@mui/material";
 import { memo, ReactNode, useState, VFC } from "react";
 
-export const Pitfall3 = () => {
+export const Quiz1 = () => {
   const [, setKey] = useState(0);
-  console.log(`A is rendered!`);
   return (
     <>
       <Button
@@ -13,9 +12,8 @@ export const Pitfall3 = () => {
       >
         Reload A
       </Button>
-      <Memoized name="B1">bar</Memoized>
-      <Memoized name="B2">
-        <b>bar</b>
+      <Memoized name="B1">
+        <MemoizedChild />
       </Memoized>
     </>
   );
@@ -30,3 +28,5 @@ const Component: VFC<{ name: string; children: ReactNode }> = ({
 };
 
 const Memoized = memo(Component);
+
+const MemoizedChild = memo(() => <>bar</>);
