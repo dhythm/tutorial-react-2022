@@ -14,6 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import "../assets/css/App.css";
 import logo from "../assets/img/logo.svg";
+import { withName } from "../components/hocs/withName";
 import { Page } from "../components/Page";
 import { Welcome } from "../components/Welcome";
 import { useCounter } from "../utils/hooks/useCounter";
@@ -41,6 +42,9 @@ export const WelcomePage = () => {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>
+        </Grid>
+        <Grid item xs={12}>
+          <Greeting />
         </Grid>
         <Grid item xs={12}>
           <Typography color={theme === "dark" ? "whitesmoke" : "black"}>
@@ -90,3 +94,5 @@ export const WelcomePage = () => {
     </Page>
   );
 };
+
+const Greeting = withName(Welcome);
