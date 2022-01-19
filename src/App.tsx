@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { MemoPage } from "./pages/MemoPage";
+import { RefPage } from "./pages/RefPage";
 import { WelcomePage } from "./pages/WelcomePage";
 import { I18nProvider } from "./utils/providers/I18nProvider";
 import { ThemeProvider } from "./utils/providers/ThemeProvider";
@@ -36,7 +37,7 @@ function App() {
         ) : value === "memo" ? (
           <MemoPage />
         ) : (
-          <></>
+          <RefPage />
         )}
       </I18nProvider>
     </ThemeProvider>

@@ -1,4 +1,6 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography as MuiTypography } from "@mui/material";
+import { ComponentProps, FC } from "react";
+import { useCurrentTheme } from "../../utils/providers/ThemeProvider";
 import { Appendix1 } from "./Appendix1";
 import { Pitfall1 } from "./Pitfall1";
 import { Pitfall2 } from "./Pitfall2";
@@ -13,67 +15,77 @@ export const Playground = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Sample 1</Typography>
+        <Typography>Sample 1</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Sample1 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Sample 2</Typography>
+        <Typography>Sample 2</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Sample2 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Pitfall 1</Typography>
+        <Typography>Pitfall 1</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Pitfall1 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Pitfall 2</Typography>
+        <Typography>Pitfall 2</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Pitfall2 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Pitfall 3</Typography>
+        <Typography>Pitfall 3</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Pitfall3 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Quiz 1</Typography>
+        <Typography>Quiz 1</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Quiz1 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Pitfall 4</Typography>
+        <Typography>Pitfall 4</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Pitfall4 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Quiz 2</Typography>
+        <Typography>Quiz 2</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Quiz2 />
       </Grid>
 
       <Grid item xs={1} container alignItems={"center"}>
-        <Typography color={"whitesmoke"}>Appendix 1</Typography>
+        <Typography>Appendix 1</Typography>
       </Grid>
       <Grid item xs={11} direction={"row"}>
         <Appendix1 />
       </Grid>
     </Grid>
+  );
+};
+
+const Typography: FC<ComponentProps<typeof MuiTypography>> = ({ ...props }) => {
+  const currentTheme = useCurrentTheme();
+  return (
+    <MuiTypography
+      color={currentTheme === "dark" ? "whitesmoke" : "black"}
+      {...props}
+    />
   );
 };

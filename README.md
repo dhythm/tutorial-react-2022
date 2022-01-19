@@ -28,6 +28,8 @@ Additional Hooks
 
 ### useContext
 
+See `I18nProvider` in `WelcomePage`.
+
 ### useCallback, useMemo, React.memo
 
 #### React Components are often re-rendered
@@ -206,3 +208,7 @@ const Component = ({ onChange }) => {
 一方、`useMemo` は計算が重い処理をメモ化するなど、単体でも効果を発揮する。
 
 [React.memo / useCallback / useMemo の使い方、使い所を理解してパフォーマンス最適化をする](https://qiita.com/soarflat/items/b9d3d17b8ab1f5dbfed2)
+
+### useRef
+
+See `RefPage`.
