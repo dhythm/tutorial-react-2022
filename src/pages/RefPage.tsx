@@ -12,7 +12,7 @@ export const RefPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [ref, setRef] = useState<HTMLInputElement | null>(null);
   const [, setKey] = useState(0);
-  console.log({ ref, inputRef });
+
   return (
     <Page>
       <Grid container spacing={2}>
